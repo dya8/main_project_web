@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  @apply bg-slate-950 text-slate-50 font-sans antialiased selection:bg-cyan-500/30;
+  font-family: 'Inter', sans-serif;
+}
+
+.glass-panel {
+  @apply bg-slate-900/50 backdrop-blur-xl border border-white/10 shadow-2xl;
+}
