@@ -195,14 +195,14 @@ export default function HowToUse() {
               <p className="text-center text-pink-400/80 font-mono text-sm tracking-widest mt-6 z-20">VIDEO_PLAYER : AWAITING_SOURCE</p>
 
               {/* Example of how to embed a YouTube video once available:*/
-               <iframe 
-                 className="w-full h-full absolute inset-0 z-30" 
-                 src="demo.mp4" 
-                 title="System Demo Video" 
-                 frameBorder="0" 
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                 allowFullScreen>
-               </iframe> 
+              <video
+  className="w-full h-full absolute inset-0 z-30 object-cover"
+  src="/demo.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+/>
                }
             </div>
 

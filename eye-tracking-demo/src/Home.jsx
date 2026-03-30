@@ -20,7 +20,7 @@ const featuresData = [
     title: "Home Interface",
     icon: Keyboard,
     color: "blue",
-    images: ["/home_screen.png"],
+    images: ["/asst.jpeg"],
     overview: "An intuitive circular, gaze-controlled interface allows users to seamlessly navigate between actions and tools.",
     details: "Built specifically around the constraint of eye-tracking, this radial menu minimizes eye strain and accidental clicks by requiring deliberate dwell times on large, easily distinguishable targets."
   },
@@ -29,7 +29,7 @@ const featuresData = [
     title: "Take Notes",
     icon: StickyNote,
     color: "indigo",
-    images: ["/take_notes.png"],
+    images: ["/take.jpeg"],
     overview: "A specialized environment optimized for writing, enabling students to dictate or type out notes efficiently using gaze.",
     details: "The uncluttered interface prioritizes the text area while keeping essential formatting and saving tools accessible on the periphery."
   },
@@ -47,7 +47,7 @@ const featuresData = [
     title: "View & Manage Notes",
     icon: BookOpen,
     color: "pink",
-    images: ["/view_notes1.jpeg", "/view_notes2.jpeg"],
+    images: ["/save_notes.jpeg","taking_notes.jpeg"],
     overview: "A dedicated gallery bridging past work, allowing users to scroll through, read, and organize their previous notes seamlessly.",
     details: "Users can effortlessly retrieve study materials using gaze-based sequential scanning and categorization, keeping their educational journey organized."
   },
@@ -56,7 +56,7 @@ const featuresData = [
     title: "Assistive Coding",
     icon: Code,
     color: "amber",
-    images: ["/code_template.jpeg", "/code_template1.jpeg"],
+    images: ["/coding/coding_main.jpeg", "/coding/coding_temp.jpeg",  "/coding/coding.jpeg", "/coding/coding2.jpeg", "/coding/coding3.jpeg", "/coding/coding4.jpeg","/coding/coding_working.jpeg"],
     overview: "A specialized environment to construct complex programming logic and syntax using simplified, gaze-friendly blocks.",
     details: "This interface demystifies software development for motor-impaired students, allowing them to participate in computer science curricula by snapping together syntactic structures with their eyes."
   },
@@ -65,7 +65,7 @@ const featuresData = [
     title: "Voice Recording",
     icon: Mic,
     color: "rose",
-    images: ["/rec_screen.png"],
+    images: ["/save_notes.png"],
     overview: "Integrates hands-free audio recording capabilities, providing an alternative input and communication channel.",
     details: "For students who can vocalize, this tool records lectures or personal memos directly into the application ecosystem, securely saving them alongside text notes."
   }
