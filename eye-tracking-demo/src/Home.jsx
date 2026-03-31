@@ -3,6 +3,7 @@ import { Eye, Keyboard, StickyNote, Sparkles, BookOpen, Code, Mic, ChevronRight,
 import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+const FEEDBACK_URL = "https://forms.gle/fRBaMdkfHWKHfM5f6";
 const featuresData = [
 
 
@@ -176,6 +177,16 @@ export default function Home() {
               onClick={() => navigate('/how-to-use')}
               className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-blue-700/80 to-purple-700/80 border border-white/10 text-white font-bold text-lg overflow-hidden transition-all shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] hover:-translate-y-1"
             >
+
+            <button
+  onClick={() => window.open(FEEDBACK_URL, "_blank")}
+  className="group relative inline-flex items-center gap-3 px-8 py-4 mt-4 rounded-full bg-gradient-to-r from-pink-600/80 to-rose-600/80 border border-white/10 text-white font-bold text-lg overflow-hidden transition-all shadow-[0_0_30px_rgba(244,63,94,0.4)] hover:shadow-[0_0_50px_rgba(244,63,94,0.6)] hover:-translate-y-1"
+>
+  <div className="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors" />
+  <span className="relative z-10 flex items-center gap-2">
+    💬 Give Feedback
+  </span>
+</button>
               <div className="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors" />
               <span className="relative z-10 flex items-center gap-2">
                 <Sparkles className="w-5 h-5" />
