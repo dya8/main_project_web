@@ -1,9 +1,23 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Lightbulb, Moon, Activity, Eye, Focus, Laptop, AlertTriangle, Video } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 
 export default function HowToUse() {
   const navigate = useNavigate();
+  const videos = [
+  { src: "/demo.mp4", label: "Demo" },
+  { src: "/notes/c1.mp4", label: "Coding" },
+  { src: "/notes/c2.mp4", label: "Coding" },
+  { src: "/notes/ki.mp4", label: "Notes" },
+  { src: "/notes/pv_audio.mp4", label: "Notes" },
+  { src: "/notes/rk.mp4", label: "Notes" },
+  { src: "/notes/sn.mp4", label: "Notes" },
+  { src: "/notes/tn.mp4", label: "Notes" },
+];
+
+const [index, setIndex] = useState(0);
 
   return (
     <div className="relative min-h-screen bg-transparent selection:bg-cyan-500/30 overflow-hidden font-sans text-slate-300">
@@ -188,25 +202,65 @@ export default function HowToUse() {
               </p>
             </div>
 
-            <div className="w-full max-w-4xl aspect-video rounded-2xl border border-white/10 overflow-hidden bg-[#03050C] flex flex-col items-center justify-center relative group-hover:border-pink-500/50 transition-colors shadow-2xl shadow-pink-500/10">
-              {/* Placeholder for actual video embed */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#03050C]/80 to-transparent z-10 pointer-events-none" />
-              <Video className="w-20 h-20 text-slate-700 group-hover:text-pink-400/50 transition-colors z-20" />
-              <p className="text-center text-pink-400/80 font-mono text-sm tracking-widest mt-6 z-20">VIDEO_PLAYER : AWAITING_SOURCE</p>
+            <div className="w-full max-w-4xl aspect-video rounded-2xl border border-white/10 overflow-hidden bg-[#03050C] relative group-hover:border-pink-500/50 transition-colors shadow-2xl shadow-pink-500/10">
 
-              {/* Example of how to embed a YouTube video once available:*/
-              <video
-  className="w-full h-full absolute inset-0 z-30 object-cover"
-  src="/demo.mp4"
-  autoPlay
-  loop
-  muted
-  playsInline
-/>
-               }
-            </div>
+  {/* SWIPE WRAPPER */}
+  <motion.div
+    key={index}
+    drag="x"
+    dragConstraints={{ left: 0, right: 0 }}
+    onDragEnd={(e, info) => {
+      if (info.offset.x < -80) {
+        // swipe left → next
+        setIndex((prev) => (prev + 1) % videos.length);
+      } else if (info.offset.x > 80) {
+        // swipe right → prev
+        setIndex((prev) => (prev - 1 + videos.length) % videos.length);
+      }
+    }}
+    className="w-full h-full absolute inset-0"
+  >
+    <video
+      className="w-full h-full object-cover"
+      src={videos[index].src}
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
+  </motion.div>
 
-          </div>
+  {/* OVERLAY */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#03050C]/80 to-transparent z-10 pointer-events-none" />
+
+  {/* LABEL */}
+  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
+    <p className="text-pink-400 font-mono text-sm tracking-widest">
+      {videos[index].label.toUpperCase()}
+    </p>
+  </div>
+
+  {/* DESKTOP ARROWS (optional but useful) */}
+  <button
+    onClick={() =>
+      setIndex((prev) => (prev - 1 + videos.length) % videos.length)
+    }
+    className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 px-3 py-2 rounded-lg"
+  >
+    ◀
+  </button>
+
+  <button
+    onClick={() =>
+      setIndex((prev) => (prev + 1) % videos.length)
+    }
+    className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 px-3 py-2 rounded-lg"
+  >
+    ▶
+  </button>
+
+</div>
+</div>
         </motion.div>
 
       </div>
