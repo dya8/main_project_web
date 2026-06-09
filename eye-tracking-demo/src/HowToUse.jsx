@@ -15,8 +15,7 @@ export default function HowToUse() {
   { src: "/notes/rk.mp4", label: "Notes" },
   { src: "/notes/sn.mp4", label: "Notes" },
   { src: "/notes/tn.mp4", label: "Notes" },
-  {src: "/notes/d1.mp4", label: "EOG" },
-  {src: "/notes/d2.mp4", label: "EOG" },
+ 
 ];
 
 const [index, setIndex] = useState(0);
